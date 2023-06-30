@@ -1,0 +1,897 @@
+[debug] [2023-06-30T19:34:53.916Z] ----------------------------------------------------------------------
+[debug] [2023-06-30T19:34:53.918Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chite\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-06-30T19:34:53.918Z] CLI Version:   12.3.1
+[debug] [2023-06-30T19:34:53.919Z] Platform:      win32
+[debug] [2023-06-30T19:34:53.919Z] Node Version:  v16.17.0
+[debug] [2023-06-30T19:34:53.919Z] Time:          Fri Jun 30 2023 14:34:53 GMT-0500 (Central Daylight Time)
+[debug] [2023-06-30T19:34:53.920Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-30T19:34:53.923Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-06-30T19:34:53.993Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-30T19:34:53.994Z] > authorizing via signed-in user (chite2457@gmail.com)
+[debug] [2023-06-30T19:34:53.994Z] [iam] checking project personal-site-30a38 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-30T19:34:53.995Z] > refreshing access token with scopes: []
+[debug] [2023-06-30T19:34:53.995Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-06-30T19:34:53.995Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-06-30T19:34:54.116Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-06-30T19:34:54.116Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-06-30T19:34:54.157Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-06-30T19:34:54.157Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-06-30T19:34:54.165Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:34:54.165Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:34:54.165Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-30T19:34:54.432Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:34:54.432Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-30T19:34:54.433Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:34:54.699Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:34:54.699Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2023-06-30T19:35:48.209Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
+      },
+      "site": "personal-site-30a38",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssrpersonalsite30a38",
+            "region": "us-central1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [],
+      "cleanUrls": true,
+      "public": ".firebase\\personal-site-30a38\\hosting",
+      "webFramework": "sveltekit_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase\\personal-site-30a38\\functions",
+      "codebase": "firebase-frameworks-personal-site-30a38"
+    }
+  ]
+}
+[debug] [2023-06-30T19:35:48.210Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-30T19:35:48.210Z] > authorizing via signed-in user (chite2457@gmail.com)
+[debug] [2023-06-30T19:35:48.210Z] [iam] checking project personal-site-30a38 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-06-30T19:35:48.212Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:35:48.213Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:35:48.213Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-30T19:35:48.433Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:35:48.434Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'personal-site-30a38'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2023-06-30T19:35:48.439Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:35:48.690Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:35:48.690Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[info] i  functions: preparing codebase firebase-frameworks-personal-site-30a38 for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-06-30T19:35:48.695Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-30T19:35:48.695Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:35:48.697Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-30T19:35:48.697Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:35:48.699Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-30T19:35:48.699Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:35:48.700Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-30T19:35:48.701Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:35:49.053Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-30T19:35:49.054Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudfunctions.googleapis.com. Enabling now... 
+[debug] [2023-06-30T19:35:49.055Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2023-06-30T19:35:49.055Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:35:49.107Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-30T19:35:49.108Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2023-06-30T19:35:49.108Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2023-06-30T19:35:49.109Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:35:49.111Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-30T19:35:49.111Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com [omitted]
+[warn] !  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2023-06-30T19:35:49.112Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2023-06-30T19:35:49.112Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:35:49.117Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-30T19:35:49.117Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-30T19:35:50.709Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2023-06-30T19:35:50.709Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2023-06-30T19:35:51.057Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com:enable 200
+[debug] [2023-06-30T19:35:51.057Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com:enable [omitted]
+[debug] [2023-06-30T19:35:51.140Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com:enable 200
+[debug] [2023-06-30T19:35:51.141Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2023-06-30T19:36:00.718Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-30T19:36:00.719Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:01.059Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-30T19:36:01.060Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:01.127Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-30T19:36:01.127Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-06-30T19:36:01.153Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-30T19:36:01.153Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:01.410Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-30T19:36:01.410Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-06-30T19:36:01.549Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-30T19:36:01.549Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [omitted]
+[info] i  functions: waiting for API cloudbuild.googleapis.com to activate... 
+[debug] [2023-06-30T19:36:11.563Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-30T19:36:11.564Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:11.951Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-30T19:36:11.951Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-06-30T19:36:11.955Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig [none]
+[debug] [2023-06-30T19:36:12.205Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig 200
+[debug] [2023-06-30T19:36:12.205Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig {"projectId":"personal-site-30a38","storageBucket":"personal-site-30a38.appspot.com"}
+[debug] [2023-06-30T19:36:12.206Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs [none]
+[debug] [2023-06-30T19:36:12.428Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs 200
+[debug] [2023-06-30T19:36:12.428Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs {}
+[debug] [2023-06-30T19:36:12.430Z] Validating nodejs source
+[debug] [2023-06-30T19:36:13.357Z] > [functions] package.json contents: {
+  "name": "sveltefire",
+  "version": "0.2.3",
+  "type": "module",
+  "dependencies": {
+    "svelte-icons": "^2.1.0",
+    "svelte-icons-pack": "^2.1.0",
+    "sveltefire": "^0.2.3",
+    "@sveltejs/kit": "^1.0.0",
+    "firebase-frameworks": "^0.10.1",
+    "firebase-functions": "^4.3.0",
+    "firebase-admin": "^11.0.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "16"
+  }
+}
+[debug] [2023-06-30T19:36:13.358Z] Building nodejs source
+[debug] [2023-06-30T19:36:13.359Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-30T19:36:13.378Z] Found firebase-functions binary at 'C:\Users\chite\OneDrive\Desktop\Personal-Site\.firebase\personal-site-30a38\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-06-30T19:36:13.584Z] Serving at port 8116
+
+[debug] [2023-06-30T19:36:13.783Z] Got response from /__/functions.yaml {"endpoints":{"ssrpersonalsite30a38":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssrpersonalsite30a38"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-06-30T19:36:13.793Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase\personal-site-30a38\functions directory for uploading... 
+[info] i  functions: packaged C:\Users\chite\OneDrive\Desktop\Personal-Site\.firebase\personal-site-30a38\functions (125.32 KB) for uploading 
+[debug] [2023-06-30T19:36:13.903Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions [none]
+[debug] [2023-06-30T19:36:14.430Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions 200
+[debug] [2023-06-30T19:36:14.431Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions {}
+[debug] [2023-06-30T19:36:14.433Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-06-30T19:36:15.006Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions 200
+[debug] [2023-06-30T19:36:15.006Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-06-30T19:36:15.011Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com [none]
+[debug] [2023-06-30T19:36:15.011Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:15.012Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com [none]
+[debug] [2023-06-30T19:36:15.012Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:15.012Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com [none]
+[debug] [2023-06-30T19:36:15.012Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:15.013Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com [none]
+[debug] [2023-06-30T19:36:15.013Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:15.328Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com 200
+[debug] [2023-06-30T19:36:15.328Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-06-30T19:36:15.377Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com 200
+[debug] [2023-06-30T19:36:15.377Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com [omitted]
+[warn] !  functions: missing required API eventarc.googleapis.com. Enabling now... 
+[debug] [2023-06-30T19:36:15.378Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com:enable [none]
+[debug] [2023-06-30T19:36:15.379Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com:enable x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:15.387Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com 200
+[debug] [2023-06-30T19:36:15.387Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2023-06-30T19:36:15.389Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com 200
+[debug] [2023-06-30T19:36:15.389Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com [omitted]
+[warn] !  functions: missing required API run.googleapis.com. Enabling now... 
+[debug] [2023-06-30T19:36:15.390Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com:enable [none]
+[debug] [2023-06-30T19:36:15.390Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com:enable x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:16.432Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com:enable 200
+[debug] [2023-06-30T19:36:16.433Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com:enable [omitted]
+[debug] [2023-06-30T19:36:16.621Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com:enable 200
+[debug] [2023-06-30T19:36:16.621Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com:enable [omitted]
+[debug] [2023-06-30T19:36:26.449Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com [none]
+[debug] [2023-06-30T19:36:26.449Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:26.634Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com [none]
+[debug] [2023-06-30T19:36:26.635Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:26.839Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com 200
+[debug] [2023-06-30T19:36:26.839Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-06-30T19:36:27.004Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com 200
+[debug] [2023-06-30T19:36:27.004Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-06-30T19:36:27.006Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-06-30T19:36:27.006Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-06-30T19:36:27.744Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-06-30T19:36:27.744Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-332315156685@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"100144955744715587102"}}
+[debug] [2023-06-30T19:36:27.985Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-06-30T19:36:27.985Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-332315156685@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"113519999997213196183"}}
+[debug] [2023-06-30T19:36:27.986Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:36:28.210Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:36:28.211Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[debug] [2023-06-30T19:36:28.213Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions [none]
+[debug] [2023-06-30T19:36:28.213Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"sveltekit_ssr"}}
+[debug] [2023-06-30T19:36:29.052Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions 200
+[debug] [2023-06-30T19:36:29.052Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions {"name":"projects/332315156685/sites/personal-site-30a38/versions/5d515063abe6902a","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"sveltekit_ssr"}}
+[debug] [2023-06-30T19:36:29.053Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2023-06-30T19:36:29.053Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:36:29.053Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:36:29.053Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-06-30T19:36:29.248Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:36:29.248Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-06-30T19:36:29.248Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2023-06-30T19:36:29.249Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-06-30T19:36:30.823Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-06-30T19:36:30.823Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/13bbb6d1-4e4e-44c0-9883-2591761dc671.zip?GoogleAccessId=service-332315156685@gcf-admin-robot.iam.gserviceaccount.com&Expires=1688155591&Signature=d4VWsEV4wwfxAgVXqfHDALC1Qlm8KukYFeVoOwWWWVV1TxhTypIqi6wPOSMtEwaEqAVy7J1vhVX5kGTIVWf9cDHCVvJ3BkCYQIa7HLsgJAJCAx73u%2ByF9m7TCmTq76QMjt3E74Mt0f6Tt7A5mkmT3nKShjDAurcduCiW5MLr8XT4Anoif8VPTRgpztlQRrI30VQJWc%2FMLnrj2VUREpe%2FHAZIUypQ7sw3bJ140%2FEX88kFWINB%2FRBO9TfEOpQiGZ1Y%2FhQyVAs9J4LyLp2S4hO11y%2B%2B2JLZqi2qcb5%2Fpg6i%2BtbNQOkUBi882eix%2FGzK%2BR9XRcUfVl6hpgjQUe73%2BqjbTA%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-332315156685-us-central1","object":"13bbb6d1-4e4e-44c0-9883-2591761dc671.zip"}}
+[debug] [2023-06-30T19:36:30.824Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/13bbb6d1-4e4e-44c0-9883-2591761dc671.zip GoogleAccessId=service-332315156685%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1688155591&Signature=d4VWsEV4wwfxAgVXqfHDALC1Qlm8KukYFeVoOwWWWVV1TxhTypIqi6wPOSMtEwaEqAVy7J1vhVX5kGTIVWf9cDHCVvJ3BkCYQIa7HLsgJAJCAx73u%2ByF9m7TCmTq76QMjt3E74Mt0f6Tt7A5mkmT3nKShjDAurcduCiW5MLr8XT4Anoif8VPTRgpztlQRrI30VQJWc%2FMLnrj2VUREpe%2FHAZIUypQ7sw3bJ140%2FEX88kFWINB%2FRBO9TfEOpQiGZ1Y%2FhQyVAs9J4LyLp2S4hO11y%2B%2B2JLZqi2qcb5%2Fpg6i%2BtbNQOkUBi882eix%2FGzK%2BR9XRcUfVl6hpgjQUe73%2BqjbTA%3D%3D
+[debug] [2023-06-30T19:36:30.824Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/13bbb6d1-4e4e-44c0-9883-2591761dc671.zip [stream]
+[debug] [2023-06-30T19:36:31.166Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/13bbb6d1-4e4e-44c0-9883-2591761dc671.zip 200
+[debug] [2023-06-30T19:36:31.166Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/13bbb6d1-4e4e-44c0-9883-2591761dc671.zip [omitted]
+[info] +  functions: .firebase\personal-site-30a38\functions folder uploaded successfully 
+[info] i  hosting[personal-site-30a38]: beginning deploy... 
+[info] i  hosting[personal-site-30a38]: found 15 files in .firebase\personal-site-30a38\hosting 
+[debug] [2023-06-30T19:36:31.175Z] [hosting] uploading with 200 concurrency
+[debug] [2023-06-30T19:36:31.176Z] [hosting] hash cache [LmZpcmViYXNlXHBlcnNvbmFsLXNpdGUtMzBhMzhcaG9zdGluZw] not populated
+[debug] [2023-06-30T19:36:31.204Z] [hosting] hash cache [LmZpcmViYXNlXHBlcnNvbmFsLXNpdGUtMzBhMzhcaG9zdGluZw] stored for 15 files
+[debug] [2023-06-30T19:36:31.204Z] [hosting][hash queue][FINAL] {"max":19,"min":4,"avg":6.466666666666667,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":26}
+[debug] [2023-06-30T19:36:31.205Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/5d515063abe6902a:populateFiles [none]
+[debug] [2023-06-30T19:36:31.205Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/5d515063abe6902a:populateFiles {"files":{"/_app/version.json":"434d3019ad62a258ce5d20ea8d9fa998c19f54564ee0c62348c55a3e038bc83e","/favicon.png":"18c34d9b1690069c518429175997e685fd60c7b5ad922d6b714a329738bb5cc7","/_app/immutable/assets/_page-389853a2.css":"dc6a4905d4874eed2e635404ce400c2807ce39998d656660b6aa6b33ce840f7c","/_app/immutable/chunks/2-8cc851f3.js":"76ba65dd3db665ef7d8e998fbf53cd7b14324bc80a0570bab39136ac233b81e0","/_app/immutable/chunks/1-0d75f563.js":"5d900e98736d3d78312a35cdc28a01e16935e242cdd96427669943e79a0bc2a9","/_app/immutable/chunks/index-6a5361fb.js":"0d5d7d41b964c0699bcc35e6412c420efb63f2d1906e69515cc9cf85cfffb118","/_app/immutable/chunks/index-b92548c2.js":"2532198eacbdbd08d8553ddba97bec31940def4796cc20be250ac567ad4450ec","/_app/immutable/chunks/0-c0307a4d.js":"1eb01251fd6dd5b7c2cda405b36109cf87d3529a2f6d30226f711035d7604838","/_app/immutable/chunks/singletons-f8f4b482.js":"dc7dc5a88401c51509809146763e39fc3c98285ca9cf9601cb1410109200165e","/_app/immutable/components/error.svelte-e7111c2f.js":"4ce5b5794717cee43eb88b4e8145a030f1e3aed797d6ab177e6a243db906bd79","/_app/immutable/components/layout.svelte-4a599388.js":"7bdf48d2ba158442101ffe0f6f5bca50168760609698d144b3a36de94af9a8f0","/_app/immutable/start-c5e2390f.js":"0286fb8206aef159164d054a8215bd8ae5581d972bf944c71b56716b655c38c9","/_app/immutable/assets/asphalt-3d9337fe.png":"90b2e30c0884bb67c02b2eaa8857aaf04d0333696812fd3d52266bb5fb0b5cb4","/_app/immutable/assets/cartographer-431115cd.png":"ee5bb73f1866f4f6b2cac9290a0318141cdc896797272d9509cd3c99453823b9","/_app/immutable/components/pages/_page.svelte-a3cedba0.js":"55e9779adfcb3cf1cd304ee7c41770a8b9882333e9c5e0a642324fbd9adbb90f"}}
+[debug] [2023-06-30T19:36:31.490Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/5d515063abe6902a:populateFiles 200
+[debug] [2023-06-30T19:36:31.490Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/5d515063abe6902a:populateFiles {"uploadRequiredHashes":["434d3019ad62a258ce5d20ea8d9fa998c19f54564ee0c62348c55a3e038bc83e","1eb01251fd6dd5b7c2cda405b36109cf87d3529a2f6d30226f711035d7604838","5d900e98736d3d78312a35cdc28a01e16935e242cdd96427669943e79a0bc2a9","90b2e30c0884bb67c02b2eaa8857aaf04d0333696812fd3d52266bb5fb0b5cb4","dc7dc5a88401c51509809146763e39fc3c98285ca9cf9601cb1410109200165e","0286fb8206aef159164d054a8215bd8ae5581d972bf944c71b56716b655c38c9","2532198eacbdbd08d8553ddba97bec31940def4796cc20be250ac567ad4450ec","76ba65dd3db665ef7d8e998fbf53cd7b14324bc80a0570bab39136ac233b81e0","18c34d9b1690069c518429175997e685fd60c7b5ad922d6b714a329738bb5cc7","55e9779adfcb3cf1cd304ee7c41770a8b9882333e9c5e0a642324fbd9adbb90f","ee5bb73f1866f4f6b2cac9290a0318141cdc896797272d9509cd3c99453823b9","7bdf48d2ba158442101ffe0f6f5bca50168760609698d144b3a36de94af9a8f0","4ce5b5794717cee43eb88b4e8145a030f1e3aed797d6ab177e6a243db906bd79","dc6a4905d4874eed2e635404ce400c2807ce39998d656660b6aa6b33ce840f7c","0d5d7d41b964c0699bcc35e6412c420efb63f2d1906e69515cc9cf85cfffb118"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files"}
+[debug] [2023-06-30T19:36:31.493Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/434d3019ad62a258ce5d20ea8d9fa998c19f54564ee0c62348c55a3e038bc83e [none]
+[debug] [2023-06-30T19:36:31.493Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/434d3019ad62a258ce5d20ea8d9fa998c19f54564ee0c62348c55a3e038bc83e [stream]
+[debug] [2023-06-30T19:36:31.494Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/1eb01251fd6dd5b7c2cda405b36109cf87d3529a2f6d30226f711035d7604838 [none]
+[debug] [2023-06-30T19:36:31.494Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/1eb01251fd6dd5b7c2cda405b36109cf87d3529a2f6d30226f711035d7604838 [stream]
+[debug] [2023-06-30T19:36:31.495Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/5d900e98736d3d78312a35cdc28a01e16935e242cdd96427669943e79a0bc2a9 [none]
+[debug] [2023-06-30T19:36:31.495Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/5d900e98736d3d78312a35cdc28a01e16935e242cdd96427669943e79a0bc2a9 [stream]
+[debug] [2023-06-30T19:36:31.495Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/90b2e30c0884bb67c02b2eaa8857aaf04d0333696812fd3d52266bb5fb0b5cb4 [none]
+[debug] [2023-06-30T19:36:31.495Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/90b2e30c0884bb67c02b2eaa8857aaf04d0333696812fd3d52266bb5fb0b5cb4 [stream]
+[debug] [2023-06-30T19:36:31.496Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/dc7dc5a88401c51509809146763e39fc3c98285ca9cf9601cb1410109200165e [none]
+[debug] [2023-06-30T19:36:31.496Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/dc7dc5a88401c51509809146763e39fc3c98285ca9cf9601cb1410109200165e [stream]
+[debug] [2023-06-30T19:36:31.496Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/0286fb8206aef159164d054a8215bd8ae5581d972bf944c71b56716b655c38c9 [none]
+[debug] [2023-06-30T19:36:31.496Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/0286fb8206aef159164d054a8215bd8ae5581d972bf944c71b56716b655c38c9 [stream]
+[debug] [2023-06-30T19:36:31.497Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/2532198eacbdbd08d8553ddba97bec31940def4796cc20be250ac567ad4450ec [none]
+[debug] [2023-06-30T19:36:31.497Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/2532198eacbdbd08d8553ddba97bec31940def4796cc20be250ac567ad4450ec [stream]
+[debug] [2023-06-30T19:36:31.498Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/76ba65dd3db665ef7d8e998fbf53cd7b14324bc80a0570bab39136ac233b81e0 [none]
+[debug] [2023-06-30T19:36:31.498Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/76ba65dd3db665ef7d8e998fbf53cd7b14324bc80a0570bab39136ac233b81e0 [stream]
+[debug] [2023-06-30T19:36:31.498Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/18c34d9b1690069c518429175997e685fd60c7b5ad922d6b714a329738bb5cc7 [none]
+[debug] [2023-06-30T19:36:31.498Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/18c34d9b1690069c518429175997e685fd60c7b5ad922d6b714a329738bb5cc7 [stream]
+[debug] [2023-06-30T19:36:31.499Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/55e9779adfcb3cf1cd304ee7c41770a8b9882333e9c5e0a642324fbd9adbb90f [none]
+[debug] [2023-06-30T19:36:31.499Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/55e9779adfcb3cf1cd304ee7c41770a8b9882333e9c5e0a642324fbd9adbb90f [stream]
+[debug] [2023-06-30T19:36:31.500Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/ee5bb73f1866f4f6b2cac9290a0318141cdc896797272d9509cd3c99453823b9 [none]
+[debug] [2023-06-30T19:36:31.500Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/ee5bb73f1866f4f6b2cac9290a0318141cdc896797272d9509cd3c99453823b9 [stream]
+[debug] [2023-06-30T19:36:31.500Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/7bdf48d2ba158442101ffe0f6f5bca50168760609698d144b3a36de94af9a8f0 [none]
+[debug] [2023-06-30T19:36:31.500Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/7bdf48d2ba158442101ffe0f6f5bca50168760609698d144b3a36de94af9a8f0 [stream]
+[debug] [2023-06-30T19:36:31.501Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/4ce5b5794717cee43eb88b4e8145a030f1e3aed797d6ab177e6a243db906bd79 [none]
+[debug] [2023-06-30T19:36:31.501Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/4ce5b5794717cee43eb88b4e8145a030f1e3aed797d6ab177e6a243db906bd79 [stream]
+[debug] [2023-06-30T19:36:31.503Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/dc6a4905d4874eed2e635404ce400c2807ce39998d656660b6aa6b33ce840f7c [none]
+[debug] [2023-06-30T19:36:31.503Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/dc6a4905d4874eed2e635404ce400c2807ce39998d656660b6aa6b33ce840f7c [stream]
+[debug] [2023-06-30T19:36:31.503Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/0d5d7d41b964c0699bcc35e6412c420efb63f2d1906e69515cc9cf85cfffb118 [none]
+[debug] [2023-06-30T19:36:31.503Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/0d5d7d41b964c0699bcc35e6412c420efb63f2d1906e69515cc9cf85cfffb118 [stream]
+[debug] [2023-06-30T19:36:31.504Z] [hosting][populate queue][FINAL] {"max":289,"min":289,"avg":289,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":301}
+[debug] [2023-06-30T19:36:31.504Z] [hosting] uploads queued: 15
+[debug] [2023-06-30T19:36:31.906Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/90b2e30c0884bb67c02b2eaa8857aaf04d0333696812fd3d52266bb5fb0b5cb4 200
+[debug] [2023-06-30T19:36:31.906Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/90b2e30c0884bb67c02b2eaa8857aaf04d0333696812fd3d52266bb5fb0b5cb4 [stream]
+[debug] [2023-06-30T19:36:31.916Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/18c34d9b1690069c518429175997e685fd60c7b5ad922d6b714a329738bb5cc7 200
+[debug] [2023-06-30T19:36:31.916Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/18c34d9b1690069c518429175997e685fd60c7b5ad922d6b714a329738bb5cc7 [stream]
+[debug] [2023-06-30T19:36:31.933Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/ee5bb73f1866f4f6b2cac9290a0318141cdc896797272d9509cd3c99453823b9 200
+[debug] [2023-06-30T19:36:31.934Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/ee5bb73f1866f4f6b2cac9290a0318141cdc896797272d9509cd3c99453823b9 [stream]
+[debug] [2023-06-30T19:36:31.981Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/0d5d7d41b964c0699bcc35e6412c420efb63f2d1906e69515cc9cf85cfffb118 200
+[debug] [2023-06-30T19:36:31.982Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/0d5d7d41b964c0699bcc35e6412c420efb63f2d1906e69515cc9cf85cfffb118 [stream]
+[debug] [2023-06-30T19:36:32.042Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/1eb01251fd6dd5b7c2cda405b36109cf87d3529a2f6d30226f711035d7604838 200
+[debug] [2023-06-30T19:36:32.042Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/1eb01251fd6dd5b7c2cda405b36109cf87d3529a2f6d30226f711035d7604838 [stream]
+[debug] [2023-06-30T19:36:32.049Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/434d3019ad62a258ce5d20ea8d9fa998c19f54564ee0c62348c55a3e038bc83e 200
+[debug] [2023-06-30T19:36:32.049Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/434d3019ad62a258ce5d20ea8d9fa998c19f54564ee0c62348c55a3e038bc83e [stream]
+[debug] [2023-06-30T19:36:32.053Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/dc7dc5a88401c51509809146763e39fc3c98285ca9cf9601cb1410109200165e 200
+[debug] [2023-06-30T19:36:32.053Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/dc7dc5a88401c51509809146763e39fc3c98285ca9cf9601cb1410109200165e [stream]
+[debug] [2023-06-30T19:36:32.053Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/dc6a4905d4874eed2e635404ce400c2807ce39998d656660b6aa6b33ce840f7c 200
+[debug] [2023-06-30T19:36:32.054Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/dc6a4905d4874eed2e635404ce400c2807ce39998d656660b6aa6b33ce840f7c [stream]
+[debug] [2023-06-30T19:36:32.071Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/4ce5b5794717cee43eb88b4e8145a030f1e3aed797d6ab177e6a243db906bd79 200
+[debug] [2023-06-30T19:36:32.071Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/4ce5b5794717cee43eb88b4e8145a030f1e3aed797d6ab177e6a243db906bd79 [stream]
+[debug] [2023-06-30T19:36:32.077Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/0286fb8206aef159164d054a8215bd8ae5581d972bf944c71b56716b655c38c9 200
+[debug] [2023-06-30T19:36:32.077Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/0286fb8206aef159164d054a8215bd8ae5581d972bf944c71b56716b655c38c9 [stream]
+[debug] [2023-06-30T19:36:32.087Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/7bdf48d2ba158442101ffe0f6f5bca50168760609698d144b3a36de94af9a8f0 200
+[debug] [2023-06-30T19:36:32.087Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/7bdf48d2ba158442101ffe0f6f5bca50168760609698d144b3a36de94af9a8f0 [stream]
+[debug] [2023-06-30T19:36:32.089Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/76ba65dd3db665ef7d8e998fbf53cd7b14324bc80a0570bab39136ac233b81e0 200
+[debug] [2023-06-30T19:36:32.089Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/76ba65dd3db665ef7d8e998fbf53cd7b14324bc80a0570bab39136ac233b81e0 [stream]
+[debug] [2023-06-30T19:36:32.109Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/55e9779adfcb3cf1cd304ee7c41770a8b9882333e9c5e0a642324fbd9adbb90f 200
+[debug] [2023-06-30T19:36:32.109Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/55e9779adfcb3cf1cd304ee7c41770a8b9882333e9c5e0a642324fbd9adbb90f [stream]
+[debug] [2023-06-30T19:36:32.145Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/5d900e98736d3d78312a35cdc28a01e16935e242cdd96427669943e79a0bc2a9 200
+[debug] [2023-06-30T19:36:32.145Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/5d900e98736d3d78312a35cdc28a01e16935e242cdd96427669943e79a0bc2a9 [stream]
+[debug] [2023-06-30T19:36:32.175Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/2532198eacbdbd08d8553ddba97bec31940def4796cc20be250ac567ad4450ec 200
+[debug] [2023-06-30T19:36:32.175Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5d515063abe6902a/files/2532198eacbdbd08d8553ddba97bec31940def4796cc20be250ac567ad4450ec [stream]
+[debug] [2023-06-30T19:36:32.175Z] [hosting][upload queue][FINAL] {"max":683,"min":414,"avg":554.2666666666667,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":684}
+[info] +  hosting[personal-site-30a38]: file upload complete 
+[debug] [2023-06-30T19:36:32.176Z] [hosting] deploy completed after 1008ms
+[info] i  functions: creating Node.js 16 (2nd Gen) function firebase-frameworks-personal-site-30a38:ssrpersonalsite30a38(us-central1)... 
+[debug] [2023-06-30T19:36:32.183Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions functionId=ssrpersonalsite30a38
+[debug] [2023-06-30T19:36:32.183Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions {"name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-uploads-332315156685-us-central1","object":"13bbb6d1-4e4e-44c0-9883-2591761dc671.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"30b8212aed6cdcdd46bf826f56fef0db5694621a"}}
+[debug] [2023-06-30T19:36:33.680Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions 200
+[debug] [2023-06-30T19:36:33.680Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions {"name":"projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-06-30T19:36:34.115482879Z","target":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","verb":"create","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2023-06-30T19:36:33.681Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 [none]
+[debug] [2023-06-30T19:36:33.977Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 200
+[debug] [2023-06-30T19:36:33.977Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 {"name":"projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-06-30T19:36:34.115482879Z","target":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-sources-332315156685-us-central1","object":"ssrpersonalsite30a38/function-source.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"332315156685-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"30b8212aed6cdcdd46bf826f56fef0db5694621a"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}]},"done":false}
+[debug] [2023-06-30T19:36:34.492Z] [create-firebase-frameworks-personal-site-30a38-us-central1-ssrpersonalsite30a38] Retrying task index 0
+[debug] [2023-06-30T19:36:34.492Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 [none]
+[debug] [2023-06-30T19:36:34.736Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 200
+[debug] [2023-06-30T19:36:34.736Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 {"name":"projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-06-30T19:36:34.115482879Z","target":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-sources-332315156685-us-central1","object":"ssrpersonalsite30a38/function-source.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"332315156685-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"30b8212aed6cdcdd46bf826f56fef0db5694621a"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}]},"done":false}
+[debug] [2023-06-30T19:36:35.739Z] [create-firebase-frameworks-personal-site-30a38-us-central1-ssrpersonalsite30a38] Retrying task index 0
+[debug] [2023-06-30T19:36:35.740Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 [none]
+[debug] [2023-06-30T19:36:35.976Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 200
+[debug] [2023-06-30T19:36:35.976Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 {"name":"projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-06-30T19:36:34.115482879Z","target":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-sources-332315156685-us-central1","object":"ssrpersonalsite30a38/function-source.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"332315156685-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"30b8212aed6cdcdd46bf826f56fef0db5694621a"},"environment":"GEN_2"},"stages":[{"name":"ARTIFACT_REGISTRY","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}]},"done":false}
+[debug] [2023-06-30T19:36:37.982Z] [create-firebase-frameworks-personal-site-30a38-us-central1-ssrpersonalsite30a38] Retrying task index 0
+[debug] [2023-06-30T19:36:37.982Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 [none]
+[debug] [2023-06-30T19:36:38.241Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 200
+[debug] [2023-06-30T19:36:38.241Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 {"name":"projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-06-30T19:36:34.115482879Z","target":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-sources-332315156685-us-central1","object":"ssrpersonalsite30a38/function-source.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"332315156685-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"30b8212aed6cdcdd46bf826f56fef0db5694621a"},"environment":"GEN_2"},"stages":[{"name":"ARTIFACT_REGISTRY","state":"NOT_STARTED"},{"name":"SERVICE","message":"Deleting Cloud Run service","state":"COMPLETE","resource":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"}]},"done":false}
+[debug] [2023-06-30T19:36:42.254Z] [create-firebase-frameworks-personal-site-30a38-us-central1-ssrpersonalsite30a38] Retrying task index 0
+[debug] [2023-06-30T19:36:42.255Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 [none]
+[debug] [2023-06-30T19:36:42.533Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 200
+[debug] [2023-06-30T19:36:42.533Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749 {"name":"projects/personal-site-30a38/locations/us-central1/operations/operation-1688153792882-5ff5def26a83c-6ec46e33-1a9e1749","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-06-30T19:36:34.115482879Z","endTime":"2023-06-30T19:36:39.455522221Z","target":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-sources-332315156685-us-central1","object":"ssrpersonalsite30a38/function-source.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"332315156685-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"30b8212aed6cdcdd46bf826f56fef0db5694621a"},"environment":"GEN_2"},"stages":[{"name":"ARTIFACT_REGISTRY","state":"NOT_STARTED"},{"name":"SERVICE","message":"Deleting Cloud Run service","state":"COMPLETE","resource":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"}]},"done":true,"error":{"code":7,"message":"Unable to retrieve the repository metadata for projects/personal-site-30a38/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.","details":[{"@type":"type.googleapis.com/google.rpc.Status","code":7,"message":"Unable to cleanup package projects/personal-site-30a38/locations/us-central1/repositories/gcf-artifacts/packages/ssrpersonalsite30a38. Ensure that the Cloud Functions service account has 'artifactregistry.packages.delete' permission. You can add the permission by granting the role 'roles/artifactregistry.repoAdmin'."}]}}
+[error] Unable to retrieve the repository metadata for projects/personal-site-30a38/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.
+[debug] [2023-06-30T19:36:42.538Z] Total Function Deployment time: 10354
+[debug] [2023-06-30T19:36:42.538Z] 1 Functions Deployed
+[debug] [2023-06-30T19:36:42.538Z] 1 Functions Errored
+[debug] [2023-06-30T19:36:42.538Z] 0 Function Deployments Aborted
+[debug] [2023-06-30T19:36:42.538Z] Average Function Deployment time: 10353
+[info] 
+[info] Functions deploy had errors with the following functions:
+	firebase-frameworks-personal-site-30a38:ssrpersonalsite30a38(us-central1)
+[debug] [2023-06-30T19:36:42.688Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2023-06-30T19:36:42.689Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/personal-site-30a38/locations/us-central1/repositories/gcf-artifacts/packages/ssrpersonalsite30a38 [none]
+[debug] [2023-06-30T19:36:42.690Z] >>> [apiv2][query] GET https://us.gcr.io/v2/personal-site-30a38/gcf/us-central1/tags/list [none]
+[debug] [2023-06-30T19:36:43.003Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/personal-site-30a38/locations/us-central1/repositories/gcf-artifacts/packages/ssrpersonalsite30a38 404
+[debug] [2023-06-30T19:36:43.003Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/personal-site-30a38/locations/us-central1/repositories/gcf-artifacts/packages/ssrpersonalsite30a38 {"error":{"code":404,"message":"Package \"projects/personal-site-30a38/locations/us-central1/repositories/gcf-artifacts/packages/ssrpersonalsite30a38\" was not found.","status":"NOT_FOUND"}}
+[debug] [2023-06-30T19:36:43.447Z] <<< [apiv2][status] GET https://us.gcr.io/v2/personal-site-30a38/gcf/us-central1/tags/list 200
+[debug] [2023-06-30T19:36:43.448Z] <<< [apiv2][body] GET https://us.gcr.io/v2/personal-site-30a38/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"personal-site-30a38/gcf/us-central1","tags":[]}
+[debug] [2023-06-30T19:36:43.448Z] Could not find image for function projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38
+[debug] [2023-06-30T19:36:43.448Z] Functions deploy failed.
+[debug] [2023-06-30T19:36:43.448Z] {
+  "endpoint": {
+    "id": "ssrpersonalsite30a38",
+    "project": "personal-site-30a38",
+    "region": "us-central1",
+    "entryPoint": "ssrpersonalsite30a38",
+    "platform": "gcfv2",
+    "runtime": "nodejs16",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "__FIREBASE_FRAMEWORKS_ENTRY__": "sveltekit",
+      "FIREBASE_CONFIG": "{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}",
+      "GCLOUD_PROJECT": "personal-site-30a38",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"
+    },
+    "codebase": "firebase-frameworks-personal-site-30a38",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "30b8212aed6cdcdd46bf826f56fef0db5694621a"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Unable to retrieve the repository metadata for projects/personal-site-30a38/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+    "status": 7,
+    "code": 7
+  }
+}
+[debug] [2023-06-30T19:36:43.558Z] Error: Failed to create function ssrpersonalsite30a38 in region us-central1
+    at C:\Users\chite\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:288:27
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Fabricator.createV2Function (C:\Users\chite\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:276:30)
+    at async Fabricator.createEndpoint (C:\Users\chite\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:135:13)
+    at async handle (C:\Users\chite\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2023-06-30T19:42:27.815Z] ----------------------------------------------------------------------
+[debug] [2023-06-30T19:42:27.816Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chite\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-06-30T19:42:27.817Z] CLI Version:   12.3.1
+[debug] [2023-06-30T19:42:27.817Z] Platform:      win32
+[debug] [2023-06-30T19:42:27.817Z] Node Version:  v16.17.0
+[debug] [2023-06-30T19:42:27.818Z] Time:          Fri Jun 30 2023 14:42:27 GMT-0500 (Central Daylight Time)
+[debug] [2023-06-30T19:42:27.818Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-30T19:42:27.876Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-30T19:42:27.877Z] > authorizing via signed-in user (chite2457@gmail.com)
+[debug] [2023-06-30T19:42:27.877Z] [iam] checking project personal-site-30a38 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-30T19:42:27.878Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:42:27.879Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:27.879Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-30T19:42:28.129Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:42:28.129Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-30T19:42:28.130Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:42:28.401Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:42:28.401Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2023-06-30T19:42:50.669Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
+      },
+      "site": "personal-site-30a38",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssrpersonalsite30a38",
+            "region": "us-central1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [],
+      "cleanUrls": true,
+      "public": ".firebase\\personal-site-30a38\\hosting",
+      "webFramework": "sveltekit_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase\\personal-site-30a38\\functions",
+      "codebase": "firebase-frameworks-personal-site-30a38"
+    }
+  ]
+}
+[debug] [2023-06-30T19:42:50.670Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-30T19:42:50.671Z] > authorizing via signed-in user (chite2457@gmail.com)
+[debug] [2023-06-30T19:42:50.671Z] [iam] checking project personal-site-30a38 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-06-30T19:42:50.672Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:42:50.672Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:50.673Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-30T19:42:50.891Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:42:50.891Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'personal-site-30a38'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2023-06-30T19:42:50.897Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:42:51.178Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:42:51.178Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[info] i  functions: preparing codebase firebase-frameworks-personal-site-30a38 for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-06-30T19:42:51.183Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-30T19:42:51.183Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:51.184Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-30T19:42:51.184Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:51.186Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-30T19:42:51.186Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:51.187Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-30T19:42:51.187Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:51.542Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-30T19:42:51.543Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-06-30T19:42:51.544Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-30T19:42:51.545Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-30T19:42:51.547Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-30T19:42:51.548Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-06-30T19:42:51.550Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-30T19:42:51.551Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-06-30T19:42:51.552Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig [none]
+[debug] [2023-06-30T19:42:51.766Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig 200
+[debug] [2023-06-30T19:42:51.766Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig {"projectId":"personal-site-30a38","storageBucket":"personal-site-30a38.appspot.com"}
+[debug] [2023-06-30T19:42:51.767Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs [none]
+[debug] [2023-06-30T19:42:52.016Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs 200
+[debug] [2023-06-30T19:42:52.016Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs {}
+[debug] [2023-06-30T19:42:52.020Z] Validating nodejs source
+[debug] [2023-06-30T19:42:53.074Z] > [functions] package.json contents: {
+  "name": "sveltefire",
+  "version": "0.2.3",
+  "type": "module",
+  "dependencies": {
+    "svelte-icons": "^2.1.0",
+    "svelte-icons-pack": "^2.1.0",
+    "sveltefire": "^0.2.3",
+    "@sveltejs/kit": "^1.0.0",
+    "firebase-frameworks": "^0.10.1",
+    "firebase-functions": "^4.3.0",
+    "firebase-admin": "^11.0.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "16"
+  }
+}
+[debug] [2023-06-30T19:42:53.074Z] Building nodejs source
+[debug] [2023-06-30T19:42:53.075Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-30T19:42:53.084Z] Found firebase-functions binary at 'C:\Users\chite\OneDrive\Desktop\Personal-Site\.firebase\personal-site-30a38\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-06-30T19:42:53.288Z] Serving at port 8499
+
+[debug] [2023-06-30T19:42:53.502Z] Got response from /__/functions.yaml {"endpoints":{"ssrpersonalsite30a38":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssrpersonalsite30a38"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-06-30T19:42:53.514Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase\personal-site-30a38\functions directory for uploading... 
+[info] i  functions: packaged C:\Users\chite\OneDrive\Desktop\Personal-Site\.firebase\personal-site-30a38\functions (125.32 KB) for uploading 
+[debug] [2023-06-30T19:42:53.634Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions [none]
+[debug] [2023-06-30T19:42:54.131Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions 200
+[debug] [2023-06-30T19:42:54.132Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions {}
+[debug] [2023-06-30T19:42:54.133Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-06-30T19:42:54.577Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions 200
+[debug] [2023-06-30T19:42:54.577Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-06-30T19:42:54.588Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com [none]
+[debug] [2023-06-30T19:42:54.588Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:54.589Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com [none]
+[debug] [2023-06-30T19:42:54.589Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:54.591Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com [none]
+[debug] [2023-06-30T19:42:54.591Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:54.593Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com [none]
+[debug] [2023-06-30T19:42:54.593Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:54.917Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com 200
+[debug] [2023-06-30T19:42:54.917Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-06-30T19:42:54.942Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com 200
+[debug] [2023-06-30T19:42:54.942Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-06-30T19:42:54.999Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com 200
+[debug] [2023-06-30T19:42:54.999Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2023-06-30T19:42:55.029Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com 200
+[debug] [2023-06-30T19:42:55.029Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-06-30T19:42:55.033Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-06-30T19:42:55.034Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-06-30T19:42:55.382Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-06-30T19:42:55.383Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-332315156685@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"100144955744715587102"}}
+[debug] [2023-06-30T19:42:55.597Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-06-30T19:42:55.597Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-332315156685@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"113519999997213196183"}}
+[debug] [2023-06-30T19:42:55.602Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:42:55.789Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:42:55.789Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[debug] [2023-06-30T19:42:55.791Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions [none]
+[debug] [2023-06-30T19:42:55.791Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"sveltekit_ssr"}}
+[debug] [2023-06-30T19:42:56.404Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions 200
+[debug] [2023-06-30T19:42:56.404Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions {"name":"projects/332315156685/sites/personal-site-30a38/versions/216eb4d82b24f367","status":"CREATED","config":{},"labels":{"firebase-web-framework":"sveltekit_ssr","deployment-tool":"cli-firebase"}}
+[debug] [2023-06-30T19:42:56.405Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2023-06-30T19:42:56.406Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:42:56.406Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:42:56.406Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-06-30T19:42:56.605Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:42:56.605Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-06-30T19:42:56.605Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2023-06-30T19:42:56.606Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-06-30T19:42:56.843Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-06-30T19:42:56.843Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/305505d8-e4b9-4375-9358-11c3dc51a6fd.zip?GoogleAccessId=service-332315156685@gcf-admin-robot.iam.gserviceaccount.com&Expires=1688155977&Signature=RBZgSwnSUOM5eMoRCkrKy7QdIHAUW9rhTNH07%2FOTc5g9IL4ooWqMRWj7hkqbTqryqSfgM2p0Yl4k%2FzEmCw2nQubs9LsxQ6kwFoDqOunFwmZJkT81A9ILqSViLmlZhoR48uz32SPiWGGxm1E8dUKrT%2B6IDhWlabWZbNAPulVwHRXcQUTRkChDgxUTKh7T0awcnX7w%2FOmFgd2N2mBTLAyrczZLNK8vCWhFmy7U4VMq%2Bom4CpHbBQuCEktyr2d6yGsJKBF3lwxYycc1uwaTL8o9l1S45PpmRR7rWAGw1wm4sLhcZBUibQadKqbfxzq3jxsvpe%2BD5MnXOOhs3o%2FIHvQsNg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-332315156685-us-central1","object":"305505d8-e4b9-4375-9358-11c3dc51a6fd.zip"}}
+[debug] [2023-06-30T19:42:56.843Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/305505d8-e4b9-4375-9358-11c3dc51a6fd.zip GoogleAccessId=service-332315156685%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1688155977&Signature=RBZgSwnSUOM5eMoRCkrKy7QdIHAUW9rhTNH07%2FOTc5g9IL4ooWqMRWj7hkqbTqryqSfgM2p0Yl4k%2FzEmCw2nQubs9LsxQ6kwFoDqOunFwmZJkT81A9ILqSViLmlZhoR48uz32SPiWGGxm1E8dUKrT%2B6IDhWlabWZbNAPulVwHRXcQUTRkChDgxUTKh7T0awcnX7w%2FOmFgd2N2mBTLAyrczZLNK8vCWhFmy7U4VMq%2Bom4CpHbBQuCEktyr2d6yGsJKBF3lwxYycc1uwaTL8o9l1S45PpmRR7rWAGw1wm4sLhcZBUibQadKqbfxzq3jxsvpe%2BD5MnXOOhs3o%2FIHvQsNg%3D%3D
+[debug] [2023-06-30T19:42:56.843Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/305505d8-e4b9-4375-9358-11c3dc51a6fd.zip [stream]
+[debug] [2023-06-30T19:42:57.192Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/305505d8-e4b9-4375-9358-11c3dc51a6fd.zip 200
+[debug] [2023-06-30T19:42:57.192Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/305505d8-e4b9-4375-9358-11c3dc51a6fd.zip [omitted]
+[info] +  functions: .firebase\personal-site-30a38\functions folder uploaded successfully 
+[info] i  hosting[personal-site-30a38]: beginning deploy... 
+[info] i  hosting[personal-site-30a38]: found 15 files in .firebase\personal-site-30a38\hosting 
+[debug] [2023-06-30T19:42:57.213Z] [hosting] uploading with 200 concurrency
+[debug] [2023-06-30T19:42:57.258Z] [hosting] hash cache [LmZpcmViYXNlXHBlcnNvbmFsLXNpdGUtMzBhMzhcaG9zdGluZw] stored for 15 files
+[debug] [2023-06-30T19:42:57.259Z] [hosting][hash queue][FINAL] {"max":34,"min":7,"avg":18.866666666666667,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":43}
+[debug] [2023-06-30T19:42:57.259Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/216eb4d82b24f367:populateFiles [none]
+[debug] [2023-06-30T19:42:57.259Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/216eb4d82b24f367:populateFiles {"files":{"/favicon.png":"18c34d9b1690069c518429175997e685fd60c7b5ad922d6b714a329738bb5cc7","/_app/version.json":"ed45ad264b7165d758781bef952a2b9bc19cd989ff141ed438b4ee216176665d","/_app/immutable/assets/_page-389853a2.css":"dc6a4905d4874eed2e635404ce400c2807ce39998d656660b6aa6b33ce840f7c","/_app/immutable/chunks/0-c0307a4d.js":"1eb01251fd6dd5b7c2cda405b36109cf87d3529a2f6d30226f711035d7604838","/_app/immutable/chunks/1-0d75f563.js":"5d900e98736d3d78312a35cdc28a01e16935e242cdd96427669943e79a0bc2a9","/_app/immutable/chunks/2-8cc851f3.js":"76ba65dd3db665ef7d8e998fbf53cd7b14324bc80a0570bab39136ac233b81e0","/_app/immutable/chunks/index-b92548c2.js":"2532198eacbdbd08d8553ddba97bec31940def4796cc20be250ac567ad4450ec","/_app/immutable/start-c5e2390f.js":"0286fb8206aef159164d054a8215bd8ae5581d972bf944c71b56716b655c38c9","/_app/immutable/chunks/index-6a5361fb.js":"0d5d7d41b964c0699bcc35e6412c420efb63f2d1906e69515cc9cf85cfffb118","/_app/immutable/chunks/singletons-f8f4b482.js":"dc7dc5a88401c51509809146763e39fc3c98285ca9cf9601cb1410109200165e","/_app/immutable/components/error.svelte-e7111c2f.js":"4ce5b5794717cee43eb88b4e8145a030f1e3aed797d6ab177e6a243db906bd79","/_app/immutable/components/layout.svelte-4a599388.js":"7bdf48d2ba158442101ffe0f6f5bca50168760609698d144b3a36de94af9a8f0","/_app/immutable/assets/asphalt-3d9337fe.png":"90b2e30c0884bb67c02b2eaa8857aaf04d0333696812fd3d52266bb5fb0b5cb4","/_app/immutable/assets/cartographer-431115cd.png":"ee5bb73f1866f4f6b2cac9290a0318141cdc896797272d9509cd3c99453823b9","/_app/immutable/components/pages/_page.svelte-a3cedba0.js":"55e9779adfcb3cf1cd304ee7c41770a8b9882333e9c5e0a642324fbd9adbb90f"}}
+[debug] [2023-06-30T19:42:57.584Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/216eb4d82b24f367:populateFiles 200
+[debug] [2023-06-30T19:42:57.584Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/216eb4d82b24f367:populateFiles {"uploadRequiredHashes":["ed45ad264b7165d758781bef952a2b9bc19cd989ff141ed438b4ee216176665d"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/216eb4d82b24f367/files"}
+[debug] [2023-06-30T19:42:57.585Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/216eb4d82b24f367/files/ed45ad264b7165d758781bef952a2b9bc19cd989ff141ed438b4ee216176665d [none]
+[debug] [2023-06-30T19:42:57.585Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/216eb4d82b24f367/files/ed45ad264b7165d758781bef952a2b9bc19cd989ff141ed438b4ee216176665d [stream]
+[debug] [2023-06-30T19:42:57.586Z] [hosting][populate queue][FINAL] {"max":328,"min":328,"avg":328,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":329}
+[debug] [2023-06-30T19:42:57.586Z] [hosting] uploads queued: 1
+[debug] [2023-06-30T19:42:58.324Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/216eb4d82b24f367/files/ed45ad264b7165d758781bef952a2b9bc19cd989ff141ed438b4ee216176665d 200
+[debug] [2023-06-30T19:42:58.325Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/216eb4d82b24f367/files/ed45ad264b7165d758781bef952a2b9bc19cd989ff141ed438b4ee216176665d [stream]
+[debug] [2023-06-30T19:42:58.325Z] [hosting][upload queue][FINAL] {"max":741,"min":741,"avg":741,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":741}
+[info] +  hosting[personal-site-30a38]: file upload complete 
+[debug] [2023-06-30T19:42:58.328Z] [hosting] deploy completed after 1131ms
+[info] i  functions: creating Node.js 16 (2nd Gen) function firebase-frameworks-personal-site-30a38:ssrpersonalsite30a38(us-central1)... 
+[debug] [2023-06-30T19:42:58.337Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions functionId=ssrpersonalsite30a38
+[debug] [2023-06-30T19:42:58.337Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions {"name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-uploads-332315156685-us-central1","object":"305505d8-e4b9-4375-9358-11c3dc51a6fd.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"f7986ef012843aad167d996ce706dbfa85d60f21"}}
+[debug] [2023-06-30T19:42:58.941Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions 409
+[debug] [2023-06-30T19:42:58.941Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions {"error":{"code":409,"message":"Resource 'projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38' already exists","status":"ALREADY_EXISTS","details":[{"@type":"type.googleapis.com/google.rpc.ResourceInfo","resourceName":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38"}]}}
+[warn] !  functions: HTTP Error: 409, Resource 'projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38' already exists 
+[warn] !  functions:  failed to create function projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38 
+[debug] [2023-06-30T19:43:38.959Z] [queue] Retrying task index 0
+[debug] [2023-06-30T19:43:38.960Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions functionId=ssrpersonalsite30a38
+[debug] [2023-06-30T19:43:38.961Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions {"name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-uploads-332315156685-us-central1","object":"305505d8-e4b9-4375-9358-11c3dc51a6fd.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"f7986ef012843aad167d996ce706dbfa85d60f21"}}
+[debug] [2023-06-30T19:43:39.567Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions 409
+[debug] [2023-06-30T19:43:39.567Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions {"error":{"code":409,"message":"Resource 'projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38' already exists","status":"ALREADY_EXISTS","details":[{"@type":"type.googleapis.com/google.rpc.ResourceInfo","resourceName":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38"}]}}
+[warn] !  functions: HTTP Error: 409, Resource 'projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38' already exists 
+[warn] !  functions:  failed to create function projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38 
+[debug] [2023-06-30T19:44:03.639Z] ----------------------------------------------------------------------
+[debug] [2023-06-30T19:44:03.640Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chite\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug --only functions
+[debug] [2023-06-30T19:44:03.641Z] CLI Version:   12.3.1
+[debug] [2023-06-30T19:44:03.641Z] Platform:      win32
+[debug] [2023-06-30T19:44:03.641Z] Node Version:  v16.17.0
+[debug] [2023-06-30T19:44:03.642Z] Time:          Fri Jun 30 2023 14:44:03 GMT-0500 (Central Daylight Time)
+[debug] [2023-06-30T19:44:03.642Z] ----------------------------------------------------------------------
+[debug] 
+[error] 
+[error] Error: Cannot understand what targets to deploy/serve. No targets in firebase.json match '--only functions'. If you are using PowerShell make sure you place quotes around any comma-separated lists (ex: --only "functions,firestore").
+[debug] [2023-06-30T19:44:16.359Z] ----------------------------------------------------------------------
+[debug] [2023-06-30T19:44:16.361Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chite\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2023-06-30T19:44:16.361Z] CLI Version:   12.3.1
+[debug] [2023-06-30T19:44:16.361Z] Platform:      win32
+[debug] [2023-06-30T19:44:16.361Z] Node Version:  v16.17.0
+[debug] [2023-06-30T19:44:16.362Z] Time:          Fri Jun 30 2023 14:44:16 GMT-0500 (Central Daylight Time)
+[debug] [2023-06-30T19:44:16.362Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-30T19:44:16.420Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-30T19:44:16.422Z] > authorizing via signed-in user (chite2457@gmail.com)
+[debug] [2023-06-30T19:44:16.422Z] [iam] checking project personal-site-30a38 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-30T19:44:16.425Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:44:16.426Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:16.426Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-30T19:44:16.657Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:44:16.659Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-30T19:44:16.660Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:44:16.896Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:44:16.898Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2023-06-30T19:44:33.203Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
+      },
+      "site": "personal-site-30a38",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssrpersonalsite30a38",
+            "region": "us-central1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [],
+      "cleanUrls": true,
+      "public": ".firebase\\personal-site-30a38\\hosting",
+      "webFramework": "sveltekit_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase\\personal-site-30a38\\functions",
+      "codebase": "firebase-frameworks-personal-site-30a38"
+    }
+  ]
+}
+[debug] [2023-06-30T19:44:33.207Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-30T19:44:33.207Z] > authorizing via signed-in user (chite2457@gmail.com)
+[debug] [2023-06-30T19:44:33.208Z] [iam] checking project personal-site-30a38 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-06-30T19:44:33.209Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:44:33.209Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:33.210Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-30T19:44:33.417Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:44:33.418Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'personal-site-30a38'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2023-06-30T19:44:33.424Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:44:33.601Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:44:33.603Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[info] i  functions: preparing codebase firebase-frameworks-personal-site-30a38 for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-06-30T19:44:33.608Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-30T19:44:33.608Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:33.609Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-30T19:44:33.609Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:33.610Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-30T19:44:33.610Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:33.611Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-30T19:44:33.612Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:33.948Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-30T19:44:33.949Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-06-30T19:44:33.963Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-30T19:44:33.964Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-30T19:44:33.984Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-30T19:44:33.985Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-06-30T19:44:34.005Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-30T19:44:34.006Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-06-30T19:44:34.007Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig [none]
+[debug] [2023-06-30T19:44:34.221Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig 200
+[debug] [2023-06-30T19:44:34.223Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38/adminSdkConfig {"projectId":"personal-site-30a38","storageBucket":"personal-site-30a38.appspot.com"}
+[debug] [2023-06-30T19:44:34.225Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs [none]
+[debug] [2023-06-30T19:44:34.484Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs 200
+[debug] [2023-06-30T19:44:34.486Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-site-30a38/configs {}
+[debug] [2023-06-30T19:44:34.491Z] Validating nodejs source
+[debug] [2023-06-30T19:44:35.376Z] > [functions] package.json contents: {
+  "name": "sveltefire",
+  "version": "0.2.3",
+  "type": "module",
+  "dependencies": {
+    "svelte-icons": "^2.1.0",
+    "svelte-icons-pack": "^2.1.0",
+    "sveltefire": "^0.2.3",
+    "@sveltejs/kit": "^1.0.0",
+    "firebase-frameworks": "^0.10.1",
+    "firebase-functions": "^4.3.0",
+    "firebase-admin": "^11.0.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "16"
+  }
+}
+[debug] [2023-06-30T19:44:35.380Z] Building nodejs source
+[debug] [2023-06-30T19:44:35.381Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-30T19:44:35.388Z] Found firebase-functions binary at 'C:\Users\chite\OneDrive\Desktop\Personal-Site\.firebase\personal-site-30a38\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-06-30T19:44:35.569Z] Serving at port 8410
+
+[debug] [2023-06-30T19:44:35.754Z] Got response from /__/functions.yaml {"endpoints":{"ssrpersonalsite30a38":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssrpersonalsite30a38"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-06-30T19:44:35.762Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase\personal-site-30a38\functions directory for uploading... 
+[info] i  functions: packaged C:\Users\chite\OneDrive\Desktop\Personal-Site\.firebase\personal-site-30a38\functions (125.32 KB) for uploading 
+[debug] [2023-06-30T19:44:35.844Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions [none]
+[debug] [2023-06-30T19:44:36.284Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions 200
+[debug] [2023-06-30T19:44:36.286Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/personal-site-30a38/locations/-/functions {}
+[debug] [2023-06-30T19:44:36.289Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-06-30T19:44:36.714Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions 200
+[debug] [2023-06-30T19:44:36.716Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-06-30T19:44:36.728Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com [none]
+[debug] [2023-06-30T19:44:36.728Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:36.730Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com [none]
+[debug] [2023-06-30T19:44:36.730Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:36.731Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com [none]
+[debug] [2023-06-30T19:44:36.732Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:36.733Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com [none]
+[debug] [2023-06-30T19:44:36.733Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:36.973Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com 200
+[debug] [2023-06-30T19:44:36.975Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-06-30T19:44:37.034Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com 200
+[debug] [2023-06-30T19:44:37.034Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2023-06-30T19:44:37.043Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com 200
+[debug] [2023-06-30T19:44:37.044Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-06-30T19:44:37.058Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com 200
+[debug] [2023-06-30T19:44:37.059Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-site-30a38/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-06-30T19:44:37.061Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-06-30T19:44:37.061Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-06-30T19:44:37.433Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-06-30T19:44:37.434Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-332315156685@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"100144955744715587102"}}
+[debug] [2023-06-30T19:44:37.623Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-06-30T19:44:37.625Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/332315156685/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-332315156685@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"113519999997213196183"}}
+[debug] [2023-06-30T19:44:37.630Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 [none]
+[debug] [2023-06-30T19:44:37.920Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 200
+[debug] [2023-06-30T19:44:37.922Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-site-30a38 {"projectId":"personal-site-30a38","projectNumber":"332315156685","displayName":"personal-site","name":"projects/personal-site-30a38","resources":{"hostingSite":"personal-site-30a38"},"state":"ACTIVE","etag":"1_53f0b2bf-1d8e-46f7-9b99-86c3341eb8ef"}
+[debug] [2023-06-30T19:44:37.929Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions [none]
+[debug] [2023-06-30T19:44:37.930Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"sveltekit_ssr"}}
+[debug] [2023-06-30T19:44:38.442Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions 200
+[debug] [2023-06-30T19:44:38.444Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-site-30a38/versions {"name":"projects/332315156685/sites/personal-site-30a38/versions/5a46a5bb28fae87e","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"sveltekit_ssr"}}
+[debug] [2023-06-30T19:44:38.447Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2023-06-30T19:44:38.448Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions [none]
+[debug] [2023-06-30T19:44:38.450Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions x-goog-quota-user=projects/personal-site-30a38
+[debug] [2023-06-30T19:44:38.451Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-06-30T19:44:38.647Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions 200
+[debug] [2023-06-30T19:44:38.649Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-site-30a38:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-06-30T19:44:38.651Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2023-06-30T19:44:38.653Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-06-30T19:44:38.860Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-06-30T19:44:38.862Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/b4d2aae3-8216-41f2-a0c5-a1826123a82b.zip?GoogleAccessId=service-332315156685@gcf-admin-robot.iam.gserviceaccount.com&Expires=1688156079&Signature=NQJEEw2ZtBqY%2B8i0NU4ocnft3T09J4L4Mgbzo7J8IR4UNeSmSXp8e79%2FK6swNyY6KY6UBX73Xk2sEmtbHLD1bEpAE5Sucp3mVBe3g%2FDveJE4dKdH8KYUSnb27E9CQxELkxGjekGK5AJ7zEv964y04RhWtTC4NmbTAo8ZnVqsx1nsBSc5TmZ2t88JzzMtWSTbWu2htzxdue7N8VouCXhh1%2BgoJ6D%2FX7j6o1Y4Xy6b%2B9TQDFX8lETGdabL5YFXsmPyFZFK7vr4%2FDRtFcKmQdsc33CV5z6HDfi52b2piDTMMVZOoQq%2FQVuNqnlnwM11c5BeI7LdbozHK52MyN85yeEv7w%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-332315156685-us-central1","object":"b4d2aae3-8216-41f2-a0c5-a1826123a82b.zip"}}
+[debug] [2023-06-30T19:44:38.868Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/b4d2aae3-8216-41f2-a0c5-a1826123a82b.zip GoogleAccessId=service-332315156685%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1688156079&Signature=NQJEEw2ZtBqY%2B8i0NU4ocnft3T09J4L4Mgbzo7J8IR4UNeSmSXp8e79%2FK6swNyY6KY6UBX73Xk2sEmtbHLD1bEpAE5Sucp3mVBe3g%2FDveJE4dKdH8KYUSnb27E9CQxELkxGjekGK5AJ7zEv964y04RhWtTC4NmbTAo8ZnVqsx1nsBSc5TmZ2t88JzzMtWSTbWu2htzxdue7N8VouCXhh1%2BgoJ6D%2FX7j6o1Y4Xy6b%2B9TQDFX8lETGdabL5YFXsmPyFZFK7vr4%2FDRtFcKmQdsc33CV5z6HDfi52b2piDTMMVZOoQq%2FQVuNqnlnwM11c5BeI7LdbozHK52MyN85yeEv7w%3D%3D
+[debug] [2023-06-30T19:44:38.868Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/b4d2aae3-8216-41f2-a0c5-a1826123a82b.zip [stream]
+[debug] [2023-06-30T19:44:39.160Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/b4d2aae3-8216-41f2-a0c5-a1826123a82b.zip 200
+[debug] [2023-06-30T19:44:39.162Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-332315156685-us-central1/b4d2aae3-8216-41f2-a0c5-a1826123a82b.zip [omitted]
+[info] +  functions: .firebase\personal-site-30a38\functions folder uploaded successfully 
+[info] i  hosting[personal-site-30a38]: beginning deploy... 
+[info] i  hosting[personal-site-30a38]: found 15 files in .firebase\personal-site-30a38\hosting 
+[debug] [2023-06-30T19:44:39.177Z] [hosting] uploading with 200 concurrency
+[debug] [2023-06-30T19:44:39.198Z] [hosting] hash cache [LmZpcmViYXNlXHBlcnNvbmFsLXNpdGUtMzBhMzhcaG9zdGluZw] stored for 15 files
+[debug] [2023-06-30T19:44:39.199Z] [hosting][hash queue][FINAL] {"max":16,"min":2,"avg":6.666666666666667,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":20}
+[debug] [2023-06-30T19:44:39.200Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/5a46a5bb28fae87e:populateFiles [none]
+[debug] [2023-06-30T19:44:39.201Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/5a46a5bb28fae87e:populateFiles {"files":{"/favicon.png":"18c34d9b1690069c518429175997e685fd60c7b5ad922d6b714a329738bb5cc7","/_app/version.json":"896e02aed3bca24ea1531bc3e59c16c62fca341702fec19b53487e568d845ed6","/_app/immutable/assets/_page-389853a2.css":"dc6a4905d4874eed2e635404ce400c2807ce39998d656660b6aa6b33ce840f7c","/_app/immutable/chunks/0-c0307a4d.js":"1eb01251fd6dd5b7c2cda405b36109cf87d3529a2f6d30226f711035d7604838","/_app/immutable/chunks/2-8cc851f3.js":"76ba65dd3db665ef7d8e998fbf53cd7b14324bc80a0570bab39136ac233b81e0","/_app/immutable/chunks/index-6a5361fb.js":"0d5d7d41b964c0699bcc35e6412c420efb63f2d1906e69515cc9cf85cfffb118","/_app/immutable/chunks/index-b92548c2.js":"2532198eacbdbd08d8553ddba97bec31940def4796cc20be250ac567ad4450ec","/_app/immutable/chunks/1-0d75f563.js":"5d900e98736d3d78312a35cdc28a01e16935e242cdd96427669943e79a0bc2a9","/_app/immutable/components/error.svelte-e7111c2f.js":"4ce5b5794717cee43eb88b4e8145a030f1e3aed797d6ab177e6a243db906bd79","/_app/immutable/chunks/singletons-f8f4b482.js":"dc7dc5a88401c51509809146763e39fc3c98285ca9cf9601cb1410109200165e","/_app/immutable/components/layout.svelte-4a599388.js":"7bdf48d2ba158442101ffe0f6f5bca50168760609698d144b3a36de94af9a8f0","/_app/immutable/start-c5e2390f.js":"0286fb8206aef159164d054a8215bd8ae5581d972bf944c71b56716b655c38c9","/_app/immutable/assets/asphalt-3d9337fe.png":"90b2e30c0884bb67c02b2eaa8857aaf04d0333696812fd3d52266bb5fb0b5cb4","/_app/immutable/assets/cartographer-431115cd.png":"ee5bb73f1866f4f6b2cac9290a0318141cdc896797272d9509cd3c99453823b9","/_app/immutable/components/pages/_page.svelte-a3cedba0.js":"55e9779adfcb3cf1cd304ee7c41770a8b9882333e9c5e0a642324fbd9adbb90f"}}
+[debug] [2023-06-30T19:44:39.524Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/5a46a5bb28fae87e:populateFiles 200
+[debug] [2023-06-30T19:44:39.526Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/332315156685/sites/personal-site-30a38/versions/5a46a5bb28fae87e:populateFiles {"uploadRequiredHashes":["896e02aed3bca24ea1531bc3e59c16c62fca341702fec19b53487e568d845ed6"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5a46a5bb28fae87e/files"}
+[debug] [2023-06-30T19:44:39.530Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5a46a5bb28fae87e/files/896e02aed3bca24ea1531bc3e59c16c62fca341702fec19b53487e568d845ed6 [none]
+[debug] [2023-06-30T19:44:39.531Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5a46a5bb28fae87e/files/896e02aed3bca24ea1531bc3e59c16c62fca341702fec19b53487e568d845ed6 [stream]
+[debug] [2023-06-30T19:44:39.534Z] [hosting][populate queue][FINAL] {"max":333,"min":333,"avg":333,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":337}
+[debug] [2023-06-30T19:44:39.535Z] [hosting] uploads queued: 1
+[debug] [2023-06-30T19:44:40.358Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5a46a5bb28fae87e/files/896e02aed3bca24ea1531bc3e59c16c62fca341702fec19b53487e568d845ed6 200
+[debug] [2023-06-30T19:44:40.360Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/personal-site-30a38/versions/5a46a5bb28fae87e/files/896e02aed3bca24ea1531bc3e59c16c62fca341702fec19b53487e568d845ed6 [stream]
+[debug] [2023-06-30T19:44:40.363Z] [hosting][upload queue][FINAL] {"max":833,"min":833,"avg":833,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":834}
+[info] i  hosting: upload complete 
+[info] +  hosting[personal-site-30a38]: file upload complete 
+[debug] [2023-06-30T19:44:40.366Z] [hosting] deploy completed after 1198ms
+[info] i  functions: creating Node.js 16 (2nd Gen) function firebase-frameworks-personal-site-30a38:ssrpersonalsite30a38(us-central1)... 
+[debug] [2023-06-30T19:44:40.373Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions functionId=ssrpersonalsite30a38
+[debug] [2023-06-30T19:44:40.374Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions {"name":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38","buildConfig":{"runtime":"nodejs16","entryPoint":"ssrpersonalsite30a38","source":{"storageSource":{"bucket":"gcf-v2-uploads-332315156685-us-central1","object":"b4d2aae3-8216-41f2-a0c5-a1826123a82b.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"sveltekit","FIREBASE_CONFIG":"{\"projectId\":\"personal-site-30a38\",\"storageBucket\":\"personal-site-30a38.appspot.com\"}","GCLOUD_PROJECT":"personal-site-30a38","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-site-30a38/locations/us-central1/services/ssrpersonalsite30a38"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-personal-site-30a38","firebase-functions-hash":"46866b58cff50fb427b537d76441ca30ade954b1"}}
+[debug] [2023-06-30T19:44:40.931Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions 409
+[debug] [2023-06-30T19:44:40.931Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/personal-site-30a38/locations/us-central1/functions {"error":{"code":409,"message":"Resource 'projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38' already exists","status":"ALREADY_EXISTS","details":[{"@type":"type.googleapis.com/google.rpc.ResourceInfo","resourceName":"projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38"}]}}
+[warn] !  functions: HTTP Error: 409, Resource 'projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38' already exists 
+[warn] !  functions:  failed to create function projects/personal-site-30a38/locations/us-central1/functions/ssrpersonalsite30a38 
